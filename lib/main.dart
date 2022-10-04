@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hansenberg_website/Pages/HomePage.dart';
-import 'package:hansenberg_website/Widgets/MaterialAppWithRoutes.dart';
+import 'package:hansenberg_app_web/Pages/HomePage.dart';
+import 'package:hansenberg_app_web/Widgets/MaterialAppWithRoutes.dart';
 
 void main() {
   runApp(const HansenbergWebsite());
