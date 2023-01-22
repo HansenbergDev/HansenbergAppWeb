@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hansenberg_app_web/Widgets/PaddedContainer.dart';
 
+// TODO: Personalet skal kunne se hvor mange der er frameldte (Frameldte, total, og frameldte før fredag)
+
 class DayColumn extends StatefulWidget {
   const DayColumn({Key? key, required this.dateString, this.menuString})
       : super(key: key);

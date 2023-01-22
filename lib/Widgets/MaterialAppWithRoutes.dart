@@ -18,7 +18,7 @@ class MaterialAppWithRoutes extends StatelessWidget {
         cardColor: CupertinoColors.systemPurple,
         brightness: Brightness.light
       ),
-      title: title == null ? "Hansenberg Website" : title!,
+      title: title == null ? "Hansenberg App Website" : title!,
       debugShowCheckedModeBanner: false,
       initialRoute: initialRoute,
       routes: routes,

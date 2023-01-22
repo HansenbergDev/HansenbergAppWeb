@@ -4,6 +4,10 @@ import 'package:hansenberg_app_web/Widgets/DayColumn.dart';
 import 'package:hansenberg_app_web/Widgets/FridayColumn.dart';
 import 'package:hansenberg_app_web/Widgets/PaddedContainer.dart';
 
+// TODO: Skal kunne skifte til næste uge
+
+// TODO: Hent data fra serveren
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -48,10 +52,10 @@ class HomePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            constraints: BoxConstraints(
+            constraints: const BoxConstraints(
               maxWidth: 55,
             ),
-            decoration: BoxDecoration(color: Colors.blueAccent),
+            decoration: const BoxDecoration(color: Colors.blueAccent),
           ),
           const Spacer(),
           Center(
