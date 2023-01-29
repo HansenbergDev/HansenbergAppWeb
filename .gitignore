@@ -20,4 +20,8 @@ doc/api/
 *.js.deps
 *.js.map
 
+
+*.iml
+*.ipr
+*.iws
 .idea/
