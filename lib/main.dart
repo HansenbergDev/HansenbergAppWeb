@@ -1,40 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:hansenberg_app_core/Utilities/Clients/MenuClient.dart';
-import 'package:hansenberg_app_web/Pages/HomePage.dart';
+import 'package:hansenberg_app_core/Utilities/Clients/StaffClient.dart';
+import 'package:hansenberg_app_core/Utilities/Clients/TokenClient.dart';
+import 'package:hansenberg_app_core/Utilities/TokenStorage.dart';
+import 'package:hansenberg_app_web/Pages/InitPage.dart';
+import 'package:hansenberg_app_web/Pages/LoginPage.dart';
+import 'package:hansenberg_app_web/Pages/WeekPage.dart';
 import 'package:hansenberg_app_web/Widgets/MaterialAppWithRoutes.dart';
 import 'package:hansenberg_app_core/Utilities/Clients/HttpClient.dart';
 
 void main() {
-  runApp(const HansenbergWebsite());
+  runApp(const HansenbergAppWebsite());
 }
 
 
-class HansenbergWebsite extends StatefulWidget {
-  const HansenbergWebsite({Key? key}) : super(key: key);
+class HansenbergAppWebsite extends StatefulWidget {
+  const HansenbergAppWebsite({Key? key}) : super(key: key);
 
   @override
-  State<HansenbergWebsite> createState() => _HansenbergWebsiteState();
+  State<HansenbergAppWebsite> createState() => _HansenbergAppWebsiteState();
 }
 
-class _HansenbergWebsiteState extends State<HansenbergWebsite> {
+class _HansenbergAppWebsiteState extends State<HansenbergAppWebsite> {
 
   @override
   Widget build(BuildContext context) {
 
-    String protocol = 'http://';
     String ip = '143.244.196.82';
     String port = '4001';
-    String api = '/api/1.0';
+    String urlBase = '$ip:$port';
+    String endpointBase = '/api/1.0';
 
-    String uri = "$protocol$ip:$port$api";
 
-    HttpClient httpClient = HttpClient(base: uri);
+    TokenStorage tokenStorage = TokenStorage();
+
+    HttpClient httpClient = HttpClient(urlBase: urlBase, endpointBase: endpointBase);
+    TokenClient tokenClient = TokenClient(httpClient: httpClient);
+    StaffClient staffClient = StaffClient(httpClient: httpClient);
     MenuClient menuClient = MenuClient(httpClient: httpClient);
 
     return MaterialAppWithRoutes(
         initialRoute: '/',
         routes: {
-          '/': (BuildContext context) => HomePage()
+          '/': (BuildContext context) =>
+              InitPage(
+                tokenStorage: tokenStorage,
+                tokenClient: tokenClient,
+              ),
+          '/staff/login': (BuildContext context) => LoginPage(staffClient: staffClient, tokenStorage: tokenStorage),
+          '/staff/weekpage': (BuildContext context) => WeekPage()
         }
     );
   }

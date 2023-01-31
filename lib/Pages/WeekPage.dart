@@ -4,12 +4,11 @@ import 'package:hansenberg_app_web/Widgets/DayColumn.dart';
 import 'package:hansenberg_app_web/Widgets/FridayColumn.dart';
 import 'package:hansenberg_app_web/Widgets/PaddedContainer.dart';
 
+// TODO: Hent data fra serveren
 // TODO: Skal kunne skifte til næste uge
 
-// TODO: Hent data fra serveren
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class WeekPage extends StatelessWidget {
+  const WeekPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
