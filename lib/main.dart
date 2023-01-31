@@ -5,7 +5,7 @@ import 'package:hansenberg_app_core/Utilities/Clients/TokenClient.dart';
 import 'package:hansenberg_app_core/Utilities/TokenStorage.dart';
 import 'package:hansenberg_app_web/Pages/InitPage.dart';
 import 'package:hansenberg_app_web/Pages/LoginPage.dart';
-import 'package:hansenberg_app_web/Pages/WeekPage.dart';
+import 'package:hansenberg_app_web/Pages/WeekPageNavigator.dart';
 import 'package:hansenberg_app_web/Widgets/MaterialAppWithRoutes.dart';
 import 'package:hansenberg_app_core/Utilities/Clients/HttpClient.dart';
 
@@ -47,8 +47,16 @@ class _HansenbergAppWebsiteState extends State<HansenbergAppWebsite> {
                 tokenStorage: tokenStorage,
                 tokenClient: tokenClient,
               ),
-          '/staff/login': (BuildContext context) => LoginPage(staffClient: staffClient, tokenStorage: tokenStorage),
-          '/staff/weekpage': (BuildContext context) => WeekPage()
+          '/staff/login': (BuildContext context) =>
+              LoginPage(
+                  staffClient: staffClient,
+                  tokenStorage: tokenStorage
+              ),
+          '/staff/weekpage': (BuildContext context) =>
+              WeekPageNavigator(
+                menuClient: menuClient,
+                tokenStorage: tokenStorage,
+              )
         }
     );
   }

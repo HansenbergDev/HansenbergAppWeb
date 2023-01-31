@@ -39,7 +39,6 @@ class _LoginPageState extends State<LoginPage> {
     String password = _passwordController.text;
 
     try {
-      print("Hello!");
       final token = await widget.staffClient.loginStaff(username, password);
 
 
@@ -53,9 +52,12 @@ class _LoginPageState extends State<LoginPage> {
     }
     catch(e) {
       //TODO: Notification
-      print("Exception! ${e.toString()}");
     }
   }
+
+  //TODO: Adgangskode synlig
+
+  //TODO: Enter på login siden => login
 
   @override
   Widget build(BuildContext context) {
