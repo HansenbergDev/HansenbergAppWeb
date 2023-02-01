@@ -71101,23 +71101,21 @@ $0(){return A.aoD("Error",408)},
 $S:152}
 A.a13.prototype={
 rb(a,b){return this.Pc(a,b)},
-Pc(a,b){var s=0,r=A.a3(t.Pd),q,p=this,o,n,m,l
+Pc(a,b){var s=0,r=A.a3(t.Pd),q,p=this,o,n,m,l,k
 var $async$rb=A.a4(function(c,d){if(c===1)return A.a0(d,r)
-while(true)switch(s){case 0:m=t.N
+while(true)switch(s){case 0:l=t.N
 s=3
-return A.a8(p.a.P7(0,"/menu/single",A.aA(["year",""+a,"week",""+b],m,m)),$async$rb)
-case 3:l=d
-m=l.b
-if(m===200){m=l.e
-o=A.Cz(A.Cq(m).c.a.h(0,"charset"))
-n=l.w
-if(o.cY(0,n).length!==0){m=B.aG.B6(0,A.Cz(A.Cq(m).c.a.h(0,"charset")).cY(0,n),null)
-o=J.au(m)
-q=new A.qc(o.h(m,"monday"),o.h(m,"tuesday"),o.h(m,"wednesday"),o.h(m,"thursday"))
+return A.a8(p.a.P7(0,"/menu/single",A.aA(["year",""+a,"week",""+b],l,l)),$async$rb)
+case 3:k=d
+l=k.b
+o=l===200&&A.Cz(A.Cq(k.e).c.a.h(0,"charset")).cY(0,k.w).length!==0
+n=k.e
+m=k.w
+if(o){l=B.aG.B6(0,A.Cz(A.Cq(n).c.a.h(0,"charset")).cY(0,m),null)
+o=J.au(l)
+q=new A.qc(o.h(l,"monday"),o.h(l,"tuesday"),o.h(l,"wednesday"),o.h(l,"thursday"))
 s=1
-break}else{q=null
-s=1
-break}}else{A.mm("Failed to get menu: "+m+", "+A.Cz(A.Cq(l.e).c.a.h(0,"charset")).cY(0,l.w))
+break}else{A.mm("Failed to get menu: "+l+", "+A.Cz(A.Cq(n).c.a.h(0,"charset")).cY(0,m))
 q=null
 s=1
 break}case 1:return A.a1(q,r)}})
